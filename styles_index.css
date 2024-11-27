@@ -1,0 +1,79 @@
+:root {
+  --cor01: #317327;
+  --cor02: rgb(25, 187, 52);
+  --cor03: #F2A81D;
+  --cor04: #FFDE6B;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+  flex-direction: column;
+}
+
+.register-form {
+  width: 90%;
+  max-width: 400px;
+  background: #fff;
+  padding: 20px;
+}
+
+#logoCeti{
+  width: 200px;
+  
+}
+
+.register-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: var(--cor01);
+}
+
+.register-form input[type="text"],
+.register-form input[type="number"] {
+  width: 93%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--cor01);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.register-form .checkbox-group {
+  margin-bottom: 20px;
+}
+
+.register-form .checkbox-group label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--cor01);
+}
+
+.register-form .checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.register-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--cor02);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-form button:hover {
+  background-color: var(--cor01);
+}
