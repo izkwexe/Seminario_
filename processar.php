@@ -2,8 +2,8 @@
 // Configurações de conexão com o banco de dados
 $host = 'localhost'; // Substitua pelo endereço do seu servidor
 $dbname = 'sgv'; // Substitua pelo nome do seu banco
-$username = 'izk'; // Substitua pelo seu usuário do banco
-$password = 'sgvdev'; // Substitua pela sua senha
+$username = 'root'; // Substitua pelo seu usuário do banco
+$password = ''; // Substitua pela sua senha
 
 try {
     // Conexão com o banco de dados
