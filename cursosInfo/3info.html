@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="global.css">
+    <title>3° Infor - Seminário Das Profissões</title>
+    <style>
+        :root {
+            --cor01: #317327;
+            --cor02: rgb(25, 187, 52);
+            --cor03: #F2A81D;
+            --cor04: #FFDE6B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilização do header */
+        header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+        
+        }
+
+        .line {
+            flex-grow: 1;
+            height: 2px;
+            background-color: #333;
+        }
+
+        h1, h2 {
+            color: var(--cor01);
+            font-weight:bolder;
+        }
+
+        .topics{
+            margin-left: 10px;
+            
+        }
+
+        #intro-box {
+            display: flex;
+            padding: 0px 0px 20px 0px;
+            gap: 20px;
+            width: 100%;
+        }
+
+        #imgTurma {
+            width: 250px;
+            flex: 1.5;
+        } 
+
+        #vagas-box {
+            position: fixed; /* Fixa no canto superior direito */
+            top: 20px;
+            right: 20px;
+            background-color: #1d3557; /* Azul escuro para destaque */
+            border: 2px solid #457b9d; /* Azul intermediário para borda */
+            color: #f1faee; /* Texto branco para contraste */
+            border-radius: 12px; /* Cantos arredondados */
+            padding: 10px; /* Espaçamento interno */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra suave */
+            text-align: center;
+            z-index: 1000;
+            width: 100px; /* Largura ajustada */
+            animation: slideIn 0.6s ease-out; /* Animação ao aparecer */
+            transition: transform 0.2s ease-in-out, background-color 0.3s ease; /* Suaviza mudanças */
+        }
+
+        #vagas-box:hover {
+            transform: scale(1.05); /* Leve aumento ao passar o mouse */
+             /* Muda o fundo para um verde claro */
+        }
+
+        #vagas-box h3 {
+            
+            font-size: 1rem;
+            color: #a8dadc; /* Azul claro para destaque do título */
+        }
+
+        #vagas-box span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #f4a261; /* Laranja claro para o número de vagas */
+        }
+
+        /* Animação de entrada */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+
+
+        #info-box {
+            padding: 20px 30px;
+            margin: 20px auto;
+            background: #f4f4f9;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            text-align: justify;
+            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
+        }
+
+        #info-box h1 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 2rem;
+            text-align: center;
+            font-family: 'Georgia', serif;
+        }
+
+        #info-box p {
+            color: #34495e;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+
+        /* Estilos para a seção de equipe */
+        #team-box {
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        nav li {
+            width: 100%;
+            padding: 10px;
+            text-align: start;
+            background-color: whitesmoke;
+            margin-bottom: 5px;
+        }
+
+        nav li a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            display: block;
+        }
+
+        .menu-content {
+            display: none;
+            padding: 10px;
+            background-color: #f4f4f4;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .menu-content.active {
+            display: block;
+        }
+
+        .menu-content ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-content ul li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 5px 0;
+        }
+
+        .menu-content ul li a {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-content ul li img {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+        }
+
+        .menu-content ul li span {
+            font-size: 16px;
+            color: #333;
+        }
+        #useful-links {
+            padding: 20px 10px;
+            margin: 20px auto;
+            background: #e8f5e9;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+
+        #useful-links ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #useful-links li {
+            margin-bottom: 15px;
+        }
+
+        #useful-links a {
+            text-decoration: none;
+            font-size: 1rem;
+            color: var(--cor02);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        #useful-links a:hover {
+            color: var(--cor03);
+            transform: translateX(5px);
+        }
+
+        #useful-links img {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>3° Infor</h1>
+        <div class="line"></div> <!-- Linha separadora -->
+    </header>
+    <main>
+        <section id="intro-box">
+            <img id="imgTurma" src="/imagens/imagemTurmas/3info.png" alt="">
+            <div id="vagas-box">
+                <h3>Vagas:</h3>
+                <span>0/20</span>
+            </div>
+        </section>
+
+        <h1 class="topics">Tema</h1>
+
+        <section id="info-box">
+            <h1>CyberSegurança</h1>
+            <p>A cibersegurança é o conjunto de práticas, tecnologias e processos destinados a proteger sistemas, redes e dados contra acessos não autorizados, ataques cibernéticos, roubo de informações e interrupções de serviços. Em um mundo cada vez mais digital, a cibersegurança se tornou essencial para garantir a privacidade, a integridade e a disponibilidade de informações pessoais e corporativas.</p>
+        </section>
+        
+        <h1 class="topics">Links Úteis</h1>
+        <section id="useful-links">
+            <ul>
+                <li>
+                    <a href="https://www.cert.br/" target="_blank">
+                        <img src="/imagens/info_24dp_F19E39_FILL0_wght400_GRAD0_opsz24.png" alt="Link Ícone">
+                        CERT.br - Centro de Estudos, Resposta e Tratamento de Incidentes de Segurança no Brasil
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.kaspersky.com/resource-center/definitions/what-is-cyber-security" target="_blank">
+                        <img src="/imagens/info_24dp_F19E39_FILL0_wght400_GRAD0_opsz24.png" alt="Link Ícone">
+                        Kaspersky - O que é CyberSegurança?
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.cisco.com/c/en/us/products/security/what-is-cybersecurity.html" target="_blank">
+                        <img src="/imagens/info_24dp_F19E39_FILL0_wght400_GRAD0_opsz24.png" alt="Link Ícone">
+                        Cisco - Introdução à CyberSegurança
+                    </a>
+                </li>
+                <li>
+                    <a href="https://haveibeenpwned.com/" target="_blank">
+                        <img src="/imagens/info_24dp_F19E39_FILL0_wght400_GRAD0_opsz24.png" alt="Link Ícone">
+                        Verifique se seu e-mail foi comprometido
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <script>
+        function toggleMenu(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

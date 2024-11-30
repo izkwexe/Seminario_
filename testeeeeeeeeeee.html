@@ -1,0 +1,104 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagas Disponíveis</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+            color: #333;
+        }
+        .container {
+            padding: 15px;
+            text-align: center;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .topo {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .topo h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .descricao {
+            margin: 15px 0;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+        .vagas {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .atualizado {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        .qrcode {
+            margin-top: 20px;
+        }
+        .qrcode img {
+            max-width: 100px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        /* Responsividade */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 400px;
+                margin: 20px auto;
+            }
+        }
+    </style>
+    <script>
+        // Atualiza a página automaticamente a cada 500 milissegundos
+        //setInterval(function() {
+        //    window.location.reload();
+        //}, 500); // 500ms = 0.5s
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Topo com o tema -->
+        <div class="topo">
+            <h1>3 INFORMÁTICA</h1>
+        </div>
+
+        <!-- Informações explicadas sobre o tema -->
+        <div class="descricao">
+            <p>Bem-vindo! Aqui você acompanha as vagas disponíveis na turma de 3º Informática. Aproveite essa oportunidade para ingressar nessa área promissora.</p>
+        </div>
+
+        <!-- Exibição das vagas disponíveis -->
+        <div class="vagas">
+            Vagas Disponíveis: <span><?php echo $rowDisponiveis['vagas_disponiveis']; ?></span>
+        </div>
+
+        <!-- Informação sobre a última atualização -->
+        <p class="atualizado">Última atualização: <?php echo date('d/m/Y H:i:s'); ?></p>
+
+        <!-- QR Code -->
+        <div class="qrcode">
+            <img src="images/qrcode.jpg" alt="QR Code">
+        </div>
+    </div>
+</body>
+</html>
